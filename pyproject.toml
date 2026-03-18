@@ -1,0 +1,66 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sphinx-javadoc-xml"
+version = "0.3.0"
+description = "Sphinx extension to render Java API docs from XML doclet output, with OpenJDK cross-links"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+    {name = "Andreas Reichel", email = "andreas@manticore-projects.com"},
+]
+keywords = [
+    "sphinx",
+    "javadoc",
+    "java",
+    "api",
+    "documentation",
+    "xml",
+    "doclet",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Framework :: Sphinx",
+    "Framework :: Sphinx :: Extension",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Documentation",
+    "Topic :: Documentation :: Sphinx",
+    "Topic :: Software Development :: Documentation",
+]
+dependencies = [
+    "sphinx>=5.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "sphinx-rtd-theme",
+    "furo",
+    "build",
+    "twine",
+]
+
+[project.urls]
+Homepage = "https://github.com/manticore-projects/sphinx-javadoc-xml"
+Documentation = "https://manticore-projects.com/sphinx-javadoc-xml/"
+Repository = "https://github.com/manticore-projects/sphinx-javadoc-xml"
+Issues = "https://github.com/manticore-projects/sphinx-javadoc-xml/issues"
+Changelog = "https://github.com/manticore-projects/sphinx-javadoc-xml/blob/main/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+include = ["sphinx_javadoc_xml"]
+
+[tool.setuptools.package-data]
+sphinx_javadoc_xml = ["static/*.css", "py.typed"]

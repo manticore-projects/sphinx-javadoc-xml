@@ -1,0 +1,514 @@
+/* ==========================================================================
+   sphinx-javadoc-xml — Manticore branding
+   No rounded corners. No signature frames. Clean alignment.
+   ========================================================================== */
+
+:root {
+    --jdx-primary:       var(--bst-primary, #030146);
+    --jdx-accent:        var(--bst-accent, #ff420e);
+    --jdx-bg:            var(--bst-bg, #ffffff);
+    --jdx-bg-raised:     var(--bst-bg-raised, #f5f6fa);
+    --jdx-bg-surface:    var(--bst-bg-surface, #eef0f5);
+    --jdx-bg-code:       var(--bst-bg-code, #f8f8fc);
+    --jdx-text:          var(--bst-text, #2d2d48);
+    --jdx-text-light:    var(--bst-text-light, #5f6580);
+    --jdx-text-strong:   var(--bst-text-strong, #0e0e2c);
+    --jdx-border:        var(--bst-border, #d8dbe5);
+    --jdx-border-light:  var(--bst-border-light, #eef0f5);
+    --jdx-link:          var(--bst-link, var(--jdx-accent));
+    --jdx-link-hover:    var(--bst-link-hover, #cc3000);
+    --jdx-code-fg:       var(--bst-code-inline-fg, #d63200);
+    --jdx-success:       var(--bst-success, #38a169);
+    --jdx-font-heading:  "Roboto", "Segoe UI", sans-serif;
+    --jdx-font-body:     "Roboto Slab", Georgia, serif;
+    --jdx-font-mono:     "Roboto Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+    --jdx-primary-light: #1a1872;
+    --jdx-accent-light:  #ff6b3d;
+}
+
+/* -- Package section ------------------------------------------------------- */
+
+.javadoc-package-section {
+    border: 1px solid var(--jdx-border);
+    margin-bottom: 2rem;
+    padding: 0 0 1rem 0;
+    background: var(--jdx-bg);
+}
+
+.javadoc-package-section > h1,
+.javadoc-package-section > h2 {
+    background: linear-gradient(135deg, var(--jdx-primary) 0%, var(--jdx-primary-light) 100%);
+    color: #fff;
+    padding: 14px 24px;
+    margin-bottom: 0;
+    font-family: var(--jdx-font-heading);
+    font-weight: 500;
+    font-size: 1.2em;
+    letter-spacing: 0.02em;
+}
+
+.javadoc-package-section > *:not(h1):not(h2):not(section) {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/* -- Type section --------------------------------------------------------- */
+
+.javadoc-type-section {
+    border: 1px solid var(--jdx-border);
+    margin: 1.5rem 0;
+    padding: 0;
+    background: var(--jdx-bg);
+}
+
+.javadoc-type-section > h1,
+.javadoc-type-section > h2,
+.javadoc-type-section > h3 {
+    background: var(--jdx-bg-raised);
+    border-bottom: 3px solid var(--jdx-primary);
+    padding: 12px 24px;
+    margin: 0;
+    font-family: var(--jdx-font-heading);
+    font-weight: 500;
+    font-size: 1.2em;
+    color: var(--jdx-text-strong);
+}
+
+/* Interface: green accent line */
+.javadoc-interface > h1,
+.javadoc-interface > h2,
+.javadoc-interface > h3 {
+    border-bottom-color: var(--jdx-success);
+}
+
+/* Enum: accent color line (same bg as class — no yellow) */
+.javadoc-enum > h1,
+.javadoc-enum > h2,
+.javadoc-enum > h3 {
+    border-bottom-color: var(--jdx-accent);
+}
+
+.javadoc-type-section > *:not(h1):not(h2):not(h3):not(section) {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/* -- Type header ---------------------------------------------------------- */
+
+.javadoc-type-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--jdx-border-light);
+    margin-bottom: 0.5rem;
+}
+
+.javadoc-package-name {
+    font-size: 0.85em;
+    color: var(--jdx-text-light);
+    margin-bottom: 4px !important;
+    font-family: var(--jdx-font-mono);
+}
+
+.javadoc-declaration {
+    font-family: var(--jdx-font-mono);
+    font-size: 0.92em;
+    line-height: 1.7;
+    padding: 10px 14px;
+    background: var(--jdx-bg-raised);
+    border: 1px solid var(--jdx-border);
+    margin: 10px 0 !important;
+}
+
+.javadoc-description {
+    margin-top: 14px !important;
+    color: var(--jdx-text);
+    font-family: var(--jdx-font-body);
+    line-height: 1.7;
+}
+
+/* -- Modifiers, types, keywords ------------------------------------------- */
+
+.javadoc-modifier {
+    color: var(--jdx-primary);
+    font-family: var(--jdx-font-mono);
+    font-size: 0.92em;
+}
+
+.javadoc-type, .javadoc-type-container {
+    color: var(--jdx-primary-light);
+    font-family: var(--jdx-font-mono);
+    font-size: 0.92em;
+}
+
+.javadoc-keyword {
+    color: var(--jdx-accent);
+    font-weight: 600;
+    font-family: var(--jdx-font-mono);
+    font-size: 0.92em;
+}
+
+/* -- Cross-reference links ------------------------------------------------ */
+
+a.javadoc-xref, .javadoc-xref {
+    color: var(--jdx-link);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--jdx-link);
+    transition: color 0.15s, border-color 0.15s;
+}
+a.javadoc-xref:hover, .javadoc-xref:hover {
+    color: var(--jdx-link-hover);
+    border-bottom-style: solid;
+}
+
+a.javadoc-xref-external, .javadoc-xref-external {
+    color: var(--jdx-link);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--jdx-accent-light);
+    transition: color 0.15s, border-color 0.15s;
+}
+a.javadoc-xref-external:hover, .javadoc-xref-external:hover {
+    color: var(--jdx-link-hover);
+    border-bottom-style: solid;
+}
+a.javadoc-xref-external::after {
+    content: "\2009\2197";
+    font-size: 0.72em;
+    vertical-align: super;
+    color: var(--jdx-text-light);
+}
+
+/* -- Summary/detail headings ---------------------------------------------- */
+
+.javadoc-summary > h1, .javadoc-summary > h2,
+.javadoc-summary > h3, .javadoc-summary > h4 {
+    background: var(--jdx-bg-surface);
+    color: var(--jdx-primary);
+    padding: 8px 18px;
+    border-bottom: 2px solid var(--jdx-primary);
+    font-family: var(--jdx-font-heading);
+    font-weight: 500;
+    font-size: 0.88em;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 1.2rem 0 0 0;
+}
+
+.javadoc-detail > h1, .javadoc-detail > h2,
+.javadoc-detail > h3, .javadoc-detail > h4 {
+    background: var(--jdx-bg-raised);
+    color: var(--jdx-text-strong);
+    padding: 8px 18px;
+    border-bottom: 2px solid var(--jdx-border);
+    font-family: var(--jdx-font-heading);
+    font-weight: 500;
+    font-size: 0.88em;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 1.5rem 0 0 0;
+}
+
+/* -- Summary tables ------------------------------------------------------- */
+
+.javadoc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 0 1rem 0;
+    font-size: 0.9em;
+    font-family: var(--jdx-font-body);
+}
+
+.javadoc-table thead th, .javadoc-table thead td {
+    background: var(--jdx-bg-surface);
+    border-bottom: 2px solid var(--jdx-border);
+    padding: 10px 14px;
+    text-align: left;
+    font-family: var(--jdx-font-heading);
+    font-weight: 500;
+    color: var(--jdx-primary);
+    font-size: 0.82em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.javadoc-table td p, .javadoc-table th p { margin: 0; }
+
+.javadoc-table tbody td {
+    border-bottom: 1px solid var(--jdx-border-light);
+    padding: 8px 14px;
+    vertical-align: top;
+    color: var(--jdx-text);
+}
+
+.javadoc-table tbody tr {
+    transition: background-color 0.12s;
+}
+.javadoc-table tbody tr:hover {
+    background: var(--jdx-bg-raised);
+}
+.javadoc-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.javadoc-table:not(.is-striped) tbody tr:nth-child(even) {
+    background: var(--jdx-bg-raised);
+}
+.javadoc-table:not(.is-striped) tbody tr:nth-child(even):hover {
+    background: var(--jdx-bg-surface);
+}
+
+.javadoc-table a.javadoc-xref,
+.javadoc-table a.javadoc-xref-external {
+    color: var(--jdx-link) !important;
+}
+
+/* Summary: member link flush left, no extra indent */
+.javadoc-table a.javadoc-member-link {
+    display: inline;
+    padding: 0;
+    margin: 0;
+}
+
+/* Summary: description below member name — flush left, smaller */
+.javadoc-summary-desc {
+    font-size: 0.88em;
+    color: var(--jdx-text-light);
+    margin: 2px 0 0 0 !important;
+    padding: 0 !important;
+    font-family: var(--jdx-font-body);
+    line-height: 1.4;
+}
+
+/* -- Member detail -------------------------------------------------------- */
+
+.javadoc-member-detail {
+    padding: 14px 20px;
+    margin: 14px 0;
+    background: var(--jdx-bg-raised);
+    border: 1px solid var(--jdx-border-light);
+}
+
+/* Member name: now a section title (appears in TOC) */
+.javadoc-member-detail > h1,
+.javadoc-member-detail > h2,
+.javadoc-member-detail > h3,
+.javadoc-member-detail > h4,
+.javadoc-member-detail > h5,
+.javadoc-member-detail > h6 {
+    font-size: 1.05em;
+    font-weight: 600;
+    color: var(--jdx-text-strong);
+    margin: 0 0 6px 0 !important;
+    padding: 0 !important;
+    font-family: var(--jdx-font-mono);
+    background: transparent !important;
+    border: none !important;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+/* Permalink ¶ on member names */
+.javadoc-member-detail > h1 > a.headerlink,
+.javadoc-member-detail > h2 > a.headerlink,
+.javadoc-member-detail > h3 > a.headerlink,
+.javadoc-member-detail > h4 > a.headerlink,
+.javadoc-member-detail > h5 > a.headerlink,
+.javadoc-member-detail > h6 > a.headerlink {
+    font-size: 0.7em;
+    color: var(--jdx-text-light);
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity 0.15s;
+}
+.javadoc-member-detail:hover > h1 > a.headerlink,
+.javadoc-member-detail:hover > h2 > a.headerlink,
+.javadoc-member-detail:hover > h3 > a.headerlink,
+.javadoc-member-detail:hover > h4 > a.headerlink,
+.javadoc-member-detail:hover > h5 > a.headerlink,
+.javadoc-member-detail:hover > h6 > a.headerlink {
+    opacity: 1;
+}
+
+/* -- Signature: plain monospace text, NO frame/border/background ---------- */
+
+.javadoc-signature {
+    font-family: var(--jdx-font-mono) !important;
+    font-size: 0.88em !important;
+    line-height: 1.6;
+    color: var(--jdx-text);
+    margin: 0 0 10px 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* Kill any Pygments wrapper that might leak through */
+.javadoc-signature .highlight,
+.javadoc-signature .highlight pre,
+.javadoc-signature pre {
+    background: transparent !important;
+    color: inherit !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* -- Member links --------------------------------------------------------- */
+
+a.javadoc-member-link, .javadoc-member-link {
+    color: var(--jdx-link);
+    font-family: var(--jdx-font-mono);
+    font-size: 0.92em;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.15s;
+}
+a.javadoc-member-link:hover, .javadoc-member-link:hover {
+    text-decoration: underline;
+    color: var(--jdx-link-hover);
+}
+
+/* -- Member description --------------------------------------------------- */
+
+.javadoc-member-description {
+    margin: 6px 0 10px 0 !important;
+    font-family: var(--jdx-font-body);
+    color: var(--jdx-text);
+    font-size: 0.92em;
+    line-height: 1.6;
+    display: block;
+}
+
+/* Paragraphs inside multi-paragraph descriptions */
+.javadoc-member-description p {
+    margin: 0 0 6px 0;
+    font-family: var(--jdx-font-body);
+    font-size: inherit;
+    line-height: 1.6;
+    color: var(--jdx-text);
+}
+
+/* Bullet lists inside descriptions */
+.javadoc-member-description ul {
+    margin: 4px 0 6px 20px;
+    padding: 0;
+}
+.javadoc-member-description li {
+    margin: 2px 0;
+    font-size: inherit;
+}
+
+/* -- Detail blocks: Parameters, Returns, Throws --------------------------- */
+
+.javadoc-detail-block {
+    margin: 8px 0 4px 0;
+    padding: 0;
+}
+
+.javadoc-detail-label {
+    font-family: var(--jdx-font-heading) !important;
+    font-weight: 500 !important;
+    font-size: 0.85em !important;
+    color: var(--jdx-text-strong) !important;
+    margin: 0 0 2px 0 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.javadoc-detail-entry {
+    font-family: var(--jdx-font-body);
+    font-size: 0.9em;
+    color: var(--jdx-text);
+    margin: 2px 0 2px 16px !important;
+    line-height: 1.5;
+}
+
+.javadoc-detail-entry a,
+.javadoc-detail-entry .javadoc-xref,
+.javadoc-detail-entry .javadoc-xref-external {
+    color: var(--jdx-link) !important;
+    border-bottom: 1px dotted var(--jdx-link) !important;
+    font-family: var(--jdx-font-mono);
+}
+.javadoc-detail-entry a:hover {
+    color: var(--jdx-link-hover) !important;
+    border-bottom-style: solid !important;
+}
+
+.javadoc-detail-entry .javadoc-type-container a {
+    color: var(--jdx-link) !important;
+    border-bottom: 1px dotted var(--jdx-link) !important;
+}
+
+/* -- Tags (@author, @see, @since) ----------------------------------------- */
+
+.javadoc-tags {
+    margin: 8px 0 0 0;
+}
+
+.javadoc-tag-item {
+    font-family: var(--jdx-font-body);
+    font-size: 0.88em;
+    color: var(--jdx-text-light);
+    margin: 2px 0 !important;
+}
+
+.javadoc-tag-detail {
+    font-size: 0.88em;
+    font-family: var(--jdx-font-body);
+    color: var(--jdx-text-light);
+    margin: 2px 0 !important;
+}
+
+.javadoc-deprecated {
+    color: var(--jdx-accent) !important;
+}
+
+/* -- Known subclasses / implementors -------------------------------------- */
+
+.javadoc-hierarchy {
+    margin: 6px 20px 6px 24px;
+    font-size: 0.9em;
+    font-family: var(--jdx-font-body);
+    color: var(--jdx-text);
+}
+
+/* -- Kind group in package summary ---------------------------------------- */
+
+.javadoc-kind-group {
+    margin: 0.75rem 24px 1.25rem 24px;
+    border: none;
+}
+.javadoc-kind-group > h1, .javadoc-kind-group > h2,
+.javadoc-kind-group > h3, .javadoc-kind-group > h4 {
+    font-family: var(--jdx-font-heading);
+    font-weight: 500;
+    font-size: 0.85em;
+    background: transparent;
+    border-bottom: 1px solid var(--jdx-border);
+    padding: 6px 0;
+    color: var(--jdx-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+/* -- Responsive ----------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .javadoc-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .javadoc-member-detail { padding: 10px 14px; }
+    .javadoc-type-header,
+    .javadoc-type-section > *:not(h1):not(h2):not(h3):not(section) { padding-left: 14px; padding-right: 14px; }
+    .javadoc-package-section > *:not(h1):not(h2):not(section) { padding-left: 14px; padding-right: 14px; }
+}
+
+/* -- Print ---------------------------------------------------------------- */
+
+@media print {
+    .javadoc-package-section > h1, .javadoc-package-section > h2 {
+        background: #eee !important; color: #000 !important;
+        -webkit-print-color-adjust: exact;
+    }
+    .javadoc-member-detail { break-inside: avoid; }
+    a.javadoc-xref-external::after { content: " [" attr(href) "]"; font-size: 0.7em; color: #666; }
+}
