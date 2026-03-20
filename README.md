@@ -4,10 +4,13 @@
 [![Python](https://img.shields.io/pypi/pyversions/sphinx-javadoc-xml)](https://pypi.org/project/sphinx-javadoc-xml/)
 [![License](https://img.shields.io/pypi/l/sphinx-javadoc-xml)](LICENSE)
 
-A Sphinx extension that renders Java API documentation from an XML doclet output
+<img width="33%" alt="JSQLParser API" align="right" src="https://github.com/user-attachments/assets/e8e0f520-978b-4538-963e-74306363f976" /> A Sphinx extension that renders Java API documentation from an XML doclet output
 in a **JavaDoc-inspired style** — fully integrated with your Sphinx theme, with
 cross-links to [OpenJDK Javadoc](https://docs.oracle.com/en/java/javase/21/docs/api/)
-and between all defined types.
+and between all defined types. 
+
+Live sample: https://manticore-projects.com/JSQLParser/javadoc_snapshot.html# 
+
 
 ## Features
 
